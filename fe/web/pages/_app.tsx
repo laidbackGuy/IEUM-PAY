@@ -48,13 +48,11 @@ export default function App({ Component, pageProps }: AppProps) {
       </Head>
       <QueryClientProvider client={queryClient}>
         <HydrationBoundary state={pageProps.dehydratedState}>
-          <PortraitLayout>
-            <NextUIProvider>
-              <CounterStoreProvider>
-                <Component {...pageProps} />
-              </CounterStoreProvider>
-            </NextUIProvider>
-          </PortraitLayout>
+          <NextUIProvider>
+            <CounterStoreProvider>
+              <Component {...pageProps} />
+            </CounterStoreProvider>
+          </NextUIProvider>
         </HydrationBoundary>
       </QueryClientProvider>
     </>
